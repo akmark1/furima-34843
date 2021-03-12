@@ -1,24 +1,54 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column         | Type   | Options     |
+| -------------- | ------ | ----------- |
+| nickname       | string | null: false |
+| email          | string | null: false |
+| password       | string | null: false |
+| first_name     | string | null: false |
+| last_name      | string | null: false |
+| birthday_year  | select | null: false |
+| birthday_month | select | null: false |
+| birthday_day   | select | null: false |
 
-* Ruby version
+## items テーブル
 
-* System dependencies
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| item_name        | string     | null: false                    |
+| item_description | string     | null: false                    |
+| category         | select     | null: false                    |
+| item_status      | select     | null: false                    |
+| delivery         | select     | null: false                    |
+| item_area        | select     | null: false                    |
+| delivery_day     | select     | null: false                    |
+| item_value       | string     | null: false                    |
+| user             | references | null: false, foreign_key: true |
+| image            | Active_storage                              |
 
-* Configuration
+## comments テーブル
 
-* Database creation
+| Column | Type   | Options                            |
+| ------ | ------ | ---------------------------------- |
+| text   | string | null: false                        |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
-* Database initialization
+## orders テーブル
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| card_number    | string     | null: false                    |
+| card_exp_month | string     | null: false                    |
+| card_exp_year  | string     | null: false                    |
+| security_code  | string     | null: false                    |
+| zip_code       | string     | null: false                    |
+| state          | select     | null: false                    |
+| city           | string     | null: false                    |
+| address_line1  | string     | null: false                    |
+| address_line2  | string     | null: false                    |
+| phone_number   | string     | null: false                    |
+| user           | references | null: false, foreign_key: true |
+| item           | references | null: false, foreign_key: true |
