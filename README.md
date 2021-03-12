@@ -62,7 +62,7 @@
 | state          | integer    | null: false                    |
 | city           | string     | null: false                    |
 | address_line1  | string     | null: false                    |
-| address_line2  | string     | null: false                    |
+| address_line2  | string     |                                |
 | phone_number   | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
 | item           | references | null: false, foreign_key: true |
