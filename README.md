@@ -26,7 +26,7 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | item_name        | string     | null: false                    |
-| item_description | string     | null: false                    |
+| item_description | text       | null: false                    |
 | category         | select     | null: false                    |
 | item_status      | select     | null: false                    |
 | delivery         | select     | null: false                    |
