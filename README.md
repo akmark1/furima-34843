@@ -11,9 +11,7 @@
 | last_name          | string | null: false |
 | first_name_read    | string | null: false |
 | last_name_read     | string | null: false |
-| birthday_year      | select | null: false |
-| birthday_month     | select | null: false |
-| birthday_day       | select | null: false |
+| birthday           | data   | null: false |
 
 ### Association
 
