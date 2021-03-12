@@ -27,11 +27,11 @@
 | ---------------- | ---------- | ------------------------------ |
 | item_name        | string     | null: false                    |
 | item_description | text       | null: false                    |
-| category         | integer    | null: false                    |
-| item_status      | integer    | null: false                    |
-| delivery         | integer    | null: false                    |
-| state            | integer    | null: false                    |
-| delivery_day     | integer    | null: false                    |
+| category_id      | integer    | null: false                    |
+| item_status_id   | integer    | null: false                    |
+| delivery_id      | integer    | null: false                    |
+| state_id         | integer    | null: false                    |
+| delivery_day_id  | integer    | null: false                    |
 | item_value       | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
@@ -59,7 +59,7 @@
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | zip_code       | string     | null: false                    |
-| state          | integer    | null: false                    |
+| state_id       | integer    | null: false                    |
 | city           | string     | null: false                    |
 | address_line1  | string     | null: false                    |
 | address_line2  | string     |                                |
