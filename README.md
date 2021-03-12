@@ -27,14 +27,13 @@
 | ---------------- | ---------- | ------------------------------ |
 | item_name        | string     | null: false                    |
 | item_description | text       | null: false                    |
-| category         | select     | null: false                    |
-| item_status      | select     | null: false                    |
-| delivery         | select     | null: false                    |
-| item_area        | select     | null: false                    |
-| delivery_day     | select     | null: false                    |
-| item_value       | string     | null: false                    |
+| category         | integer    | null: false                    |
+| item_status      | integer    | null: false                    |
+| delivery         | integer    | null: false                    |
+| state            | integer    | null: false                    |
+| delivery_day     | integer    | null: false                    |
+| item_value       | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
-| image            | Active_storage                              |
 
 ### Association
 
@@ -59,12 +58,8 @@
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| card_number    | string     | null: false                    |
-| card_exp_month | string     | null: false                    |
-| card_exp_year  | string     | null: false                    |
-| security_code  | string     | null: false                    |
 | zip_code       | string     | null: false                    |
-| state          | select     | null: false                    |
+| state          | integer    | null: false                    |
 | city           | string     | null: false                    |
 | address_line1  | string     | null: false                    |
 | address_line2  | string     | null: false                    |
