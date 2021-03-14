@@ -59,8 +59,8 @@
 | zip_code       | string     | null: false                    |
 | state_id       | integer    | null: false                    |
 | city           | string     | null: false                    |
-| address_line1  | string     | null: false                    |
-| address_line2  | string     |                                |
+| house_number   | string     | null: false                    |
+| room_number    | string     |                                |
 | phone_number   | string     | null: false                    |
 | buy            | references | null: false, foreign_key: true |
 
