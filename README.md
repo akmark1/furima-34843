@@ -41,9 +41,9 @@
 
 ## comments テーブル
 
-| Column | Type   | Options                            |
-| ------ | ------ | ---------------------------------- |
-| text   | string | null: false                        |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 
