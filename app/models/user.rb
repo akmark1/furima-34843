@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, uniqueness: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }, presence: true
   validates :first_name, format: { with: /\A[一-龥]+\z/ }, presence: true
   validates :last_name, format: { with: /\A[一-龥]+\z/ }, presence: true
   validates :first_name_read, format: { with: /\A[ァ-ヶー－]+\z/ }, presence: true
   validates :last_name_read, format: { with: /\A[ァ-ヶー－]+\z/ }, presence: true
+  validates :birthday, presence: true
 end
