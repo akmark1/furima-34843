@@ -7,6 +7,7 @@ RSpec.describe User, type: :model do
     end
 
     describe 'ユーザー新規登録' do
+
       it '全ての要素があれば新規登録ができる' do
         expect(@user).to be_valid
       end
@@ -103,6 +104,8 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
+
     end
+
   end
 end
