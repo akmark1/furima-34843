@@ -114,8 +114,26 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include("Value is not included in the list")
         end
 
-        it "valueは半角数字でなけれな投稿できないこと" do
+        it "valueは全角数字では投稿できないこと" do
           @item.value = '３００'
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Value is not included in the list")
+        end
+
+        it "valueは全角文字では投稿できないこと" do
+          @item.value = 'あああ'
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Value is not included in the list")
+        end
+
+        it "valueは半角英数混合では投稿できないこと" do
+          @item.value = '111eee'
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Value is not included in the list")
+        end
+
+        it "valueは半角英語だけでは投稿できないこと" do
+          @item.value = 'eeeeee'
           @item.valid?
           expect(@item.errors.full_messages).to include("Value is not included in the list")
         end
