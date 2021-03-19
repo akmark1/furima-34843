@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   resources :items do
     resources :buys, only: [:index, :create]
   end
-  resources :orders
 end
