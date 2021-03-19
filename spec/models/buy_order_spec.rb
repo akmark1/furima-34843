@@ -78,6 +78,24 @@ RSpec.describe BuyOrder, type: :model do
         expect(@buy_order.errors.full_messages).to include("Phone number is invalid")
       end
 
+      it 'tokenが空だと保存できないこと' do
+        @buy_order.token = ''
+        @buy_order.valid?
+        expect(@buy_order.errors.full_messages).to include("Token can't be blank")
+      end
+
+      it 'user_idが空だと保存できないこと' do
+        @buy_order.user_id = nil
+        @buy_order.valid?
+        expect(@buy_order.errors.full_messages).to include("User can't be blank")
+      end
+
+      it 'item_idが空だと保存できないこと' do
+        @buy_order.item_id = nil
+        @buy_order.valid?
+        expect(@buy_order.errors.full_messages).to include("Item can't be blank")
+      end
+
     end
 
   end
