@@ -6,7 +6,7 @@ class BuyOrder
     validates :user_id
     validates :item_id
     validates :token
-    validates :zip_code, :postal_code, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
+    validates :zip_code, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
     validates :city
     validates :house_number
     validates :room_number
