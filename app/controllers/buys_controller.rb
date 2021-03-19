@@ -1,15 +1,14 @@
 class BuysController < ApplicationController
 
+  before_action :authenticate_user!, only: [:index, :create]
+  before_action :set_item, only: [:index, :create, :pay_item, :move_to_index]
+  before_action :move_to_index, only: [:index, :create]
+
   def index
-    @item = Item.find(params[:item_id])
     @buy_order = BuyOrder.new
   end
 
-  def new
-  end
-
   def create
-    @item = Item.find(params[:item_id])
     @buy_order = BuyOrder.new(buy_params)
     if @buy_order.valid?
       pay_item
@@ -27,13 +26,24 @@ class BuysController < ApplicationController
   end
 
   def pay_item
-    @item = Item.find(params[:item_id])
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: @item.value,
       card: buy_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+
+  def move_to_index
+    if current_user.id == @item.user_id
+      redirect_to root_path
+    elsif @item.buy.present?
+      redirect_to root_path
+    end
   end
 
 end
