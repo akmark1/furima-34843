@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_03_18_022257) do
     t.integer "state_id", null: false
     t.string "city", null: false
     t.string "house_number", null: false
-    t.string "room_number", null: false
+    t.string "room_number"
     t.string "phone_number", null: false
     t.bigint "buy_id", null: false
     t.datetime "created_at", precision: 6, null: false
